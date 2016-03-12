@@ -127,7 +127,7 @@ public class PlayboardRenderer {
                 scale = getDeviceMaxScale();
             } else if (scale < getDeviceMinScale()) {
                 scale = getDeviceMinScale();
-            } else if (scale == Float.NaN) {
+            } else if (Float.isNaN(scale)) {
                 scale = 1.0F;
             }
 
@@ -316,7 +316,7 @@ public class PlayboardRenderer {
                 }
                 if ((highlight.across == col) && (highlight.down == row)) {
                     thisLetter = this.white;
-                } else if (inCurrentWord) {
+                } else {
                     thisLetter = red;
                 }
             }
